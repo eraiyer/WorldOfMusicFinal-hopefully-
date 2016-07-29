@@ -16,6 +16,7 @@ class songList: UITableViewController{
     var previewArray: [String] = []
     var songsArray: [String] = []
     var favSongs: [String] = []
+    var favUrls: [String] = []
     var cellIndex = 0
     var country: String = ""
     var countryNoPlus: String = ""
@@ -240,7 +241,7 @@ func storeIdNumbers() {
                             }
                         }
                     self.tableView.reloadData()
-                    print(self.previewArray)
+                   // print(self.previewArray)
                     break
                     }
                 case .Failure(let error):
@@ -301,6 +302,7 @@ func storeIdNumbers() {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         cellIndex = indexPath.row
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         playSongs()
     }
     
@@ -334,7 +336,9 @@ func storeIdNumbers() {
     
     @IBAction func addToFavs(sender: AnyObject) {
         favSongs.append(songsArray[cellIndex])
+        favUrls.append(previewArray[cellIndex])
         songsHelper.favoriteSongs = favSongs
+        songsHelper.favoriteUrls = favUrls
     }
 
     

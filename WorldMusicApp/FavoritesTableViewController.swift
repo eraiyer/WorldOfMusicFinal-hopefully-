@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
+import Foundation
 
 class FavoritesViewController: UIViewController {
     var favouriteSongs: [String] = songsHelper.favoriteSongs
-    var favouriteUrls: [String] = []
-    
+    var favouriteUrls: [String] = songsHelper.favoriteUrls
+    var cellIndex = 0
     
     
     override func viewDidLoad() {
@@ -24,7 +26,7 @@ class FavoritesViewController: UIViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        print(favouriteSongs)
+        print(favouriteUrls)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +34,15 @@ class FavoritesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    var player = AVPlayer()
+    
+    func playSongs() {
+        let url = favouriteUrls[cellIndex]
+        let playerItem = AVPlayerItem( URL:NSURL( string:url )! )
+        player = AVPlayer(playerItem:playerItem)
+        player.rate = 1.0
+        player.play()
+    }
     
 
     
@@ -89,20 +99,21 @@ extension FavoritesViewController: UITableViewDataSource {
     
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return 10
         return favouriteSongs.count
     }
     
-    /*func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("favCell")
-        return cell!
-    }*/
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("favCell", forIndexPath: indexPath) as! CustomCell
          cell.textLabel?.text = favouriteSongs[indexPath.row]
+
         cell.textLabel!.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         cell.textLabel?.font = UIFont.boldSystemFontOfSize(17.0)
         cell.textLabel?.font = UIFont (name: "Gill Sans", size: 17)
+        
+        cell.favUrl = favouriteUrls[indexPath.row]
+        if cell.favUrl == favouriteUrls[cellIndex] {
+            cell.textLabel!.textColor = UIColor(red:0.69, green:0.90, blue:0.49, alpha:1.0)
+        }
         
         return cell
     }
@@ -117,7 +128,13 @@ extension FavoritesViewController: UITableViewDataSource {
         label.backgroundColor = UIColor.blackColor()
         return label
     }
-     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40.0
+    }
+    
+     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        cellIndex = indexPath.row
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        playSongs()
     }
 }

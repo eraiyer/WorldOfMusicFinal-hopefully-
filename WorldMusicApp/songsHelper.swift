@@ -11,5 +11,6 @@ import Foundation
 class songsHelper {
     
     static var favoriteSongs: [String] = []
+    static var favoriteUrls: [String] = []
     
 }
