@@ -16,7 +16,6 @@
 		EF886B461D4FC08700FACA07 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF886B451D4FC08700FACA07 /* RealmHelper.swift */; };
 		EF886B4A1D4FDCC500FACA07 /* SongsUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF886B491D4FDCC500FACA07 /* SongsUrls.swift */; };
 		EFD2B08D1D4AC9F800F428F9 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2B08C1D4AC9F800F428F9 /* FavoritesTableViewController.swift */; };
-		EFD2B0911D4BCF4A00F428F9 /* songsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2B0901D4BCF4A00F428F9 /* songsHelper.swift */; };
 		EFDAFE201D3D869E00ED3DAE /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE1F1D3D869E00ED3DAE /* SongList.swift */; };
 		EFDAFE221D3EDC1300ED3DAE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE211D3EDC1300ED3DAE /* CustomCell.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +46,6 @@
 		EF886B451D4FC08700FACA07 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		EF886B491D4FDCC500FACA07 /* SongsUrls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsUrls.swift; sourceTree = "<group>"; };
 		EFD2B08C1D4AC9F800F428F9 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
-		EFD2B0901D4BCF4A00F428F9 /* songsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = songsHelper.swift; sourceTree = "<group>"; };
 		EFDAFE1F1D3D869E00ED3DAE /* SongList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
 		EFDAFE211D3EDC1300ED3DAE /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F21E6045D3E831F793F5361C /* Pods-WorldMusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldMusicApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorldMusicApp/Pods-WorldMusicApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				EFDAFE1F1D3D869E00ED3DAE /* SongList.swift */,
 				EFDAFE211D3EDC1300ED3DAE /* CustomCell.swift */,
 				EFD2B08C1D4AC9F800F428F9 /* FavoritesTableViewController.swift */,
-				EFD2B0901D4BCF4A00F428F9 /* songsHelper.swift */,
 				EF886B451D4FC08700FACA07 /* RealmHelper.swift */,
 				EF886B491D4FDCC500FACA07 /* SongsUrls.swift */,
 			);
@@ -249,7 +246,6 @@
 				EFDAFE221D3EDC1300ED3DAE /* CustomCell.swift in Sources */,
 				EFD2B08D1D4AC9F800F428F9 /* FavoritesTableViewController.swift in Sources */,
 				EF886B461D4FC08700FACA07 /* RealmHelper.swift in Sources */,
-				EFD2B0911D4BCF4A00F428F9 /* songsHelper.swift in Sources */,
 				EF7F669F1D33F948004CC839 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,6 @@ class songList: UITableViewController{
     var previewArray: [realmString] = []
     var songsArray: [realmString] = []
     var favSongs: [String] = []
-    var favUrls: [String] = []
     var cellIndex = 0
     var country: String = ""
     var countryNoPlus: String = ""
@@ -213,7 +212,6 @@ func storeIdNumbers() {
                                 counter+=1
                             }
                         }
-                        
                        self.tableView.reloadData()
                        self.storePreviewUrl()
                        self.storeSongs()
@@ -243,7 +241,6 @@ func storeIdNumbers() {
                             }
                         }
                     self.tableView.reloadData()
-                   // print(self.previewArray)
                     break
                     }
                 case .Failure(let error):
@@ -271,7 +268,6 @@ func storeIdNumbers() {
                                 }
                             }
                             self.tableView.reloadData()
-                           //  print(self.songsArray)
                             break
                     }
                 case .Failure(let error):
@@ -297,7 +293,7 @@ func storeIdNumbers() {
 
         cell.prevUrl = previewArray[indexPath.row].stringValue
         
-        if cell.prevUrl == previewArray[cellIndex] {
+        if cell.prevUrl == previewArray[cellIndex].stringValue {
             cell.textLabel!.textColor = UIColor(red:0.69, green:0.90, blue:0.49, alpha:1.0)
         }
         return cell
@@ -306,6 +302,7 @@ func storeIdNumbers() {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         cellIndex = indexPath.row
+        tableView.reloadData()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         playSongs()
     }
@@ -345,49 +342,5 @@ func storeIdNumbers() {
         songUrl.favoriteUrls.append(previewArray[cellIndex])
         songUrl.favoriteSongs.append(songsArray[cellIndex])
          RealmHelper.addFavUrls(songUrl)
-        
-        favSongs.append(songsArray[cellIndex].stringValue)
-        favUrls.append(previewArray[cellIndex].stringValue)
-        songsHelper.favoriteSongs = favSongs
-        songsHelper.favoriteUrls = favUrls
-    }
-
-    
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toFavorites" {
-            let controller = segue.destinationViewController as! FavoritesViewController
-            controller.favoriteSongs = favSongs
-            
         }
-    }*/
-    
-    /*func playSongWithUrl(url: NSURL) {
-        let item = AVPlayerItem(URL: url)
-        
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "playerDidFinishPlaying:", name: AVPlayerItemDidPlayToEndTimeNotification, object: item)
-        //AVPlayerItemFailedToPlayToEndTimeNotification
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(songList.playerDidFinishPlaying), name: AVPlayerItemFailedToPlayToEndTimeNotification, object: item)
-
-        let player = AVPlayer(playerItem: item)
-        player.rate = 1.0
-        player.play()
-    }
-    
-    func playerDidFinishPlaying() {
-        cellIndex+=1
-        if cellIndex < previewArray.count {
-            playSongs()
-        }
-        let previewIndex = NSURL(string: previewArray[cellIndex+1])
-        playSongWithUrl(previewIndex!)
-    }
-    
-    @IBAction func playAllSongs(sender: AnyObject) {
-        cellIndex+=1
-        if cellIndex < previewArray.count{
-            playSongs()
-       }
-        let previewIndex = NSURL(string: previewArray[cellIndex])
-        playSongWithUrl(previewIndex!)
-     }*/
 }

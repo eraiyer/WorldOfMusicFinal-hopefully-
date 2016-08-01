@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -11,37 +12,28 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="jFt-6k-7KP"/>
+                        <viewControllerLayoutGuide type="bottom" id="o8U-IL-xSl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <view key="view" contentMode="scaleToFill" id="Udh-jQ-iYE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphoneGlobe" translatesAutoresizingMaskIntoConstraints="NO" id="g11-pQ-yVi">
-                                <rect key="frame" x="108" y="86" width="393" height="375"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="headphoneGlobe" translatesAutoresizingMaskIntoConstraints="NO" id="8tF-ZK-KcO">
+                                <rect key="frame" x="105" y="230" width="199" height="224"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8tF-ZK-KcO" secondAttribute="height" multiplier="1:1" id="n6C-CH-bx5"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="g11-pQ-yVi" secondAttribute="bottom" constant="139" id="0Lx-yj-BJp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="g11-pQ-yVi" secondAttribute="trailing" constant="79" id="CtW-XB-TiP"/>
-                            <constraint firstItem="g11-pQ-yVi" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="88" id="LiE-2S-vCl"/>
-                            <constraint firstItem="g11-pQ-yVi" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="197" id="X17-dF-f7f"/>
-                            <constraint firstItem="g11-pQ-yVi" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="66" id="Yt3-1X-c66"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="g11-pQ-yVi" secondAttribute="bottom" constant="139" id="cXu-o2-0lD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="g11-pQ-yVi" secondAttribute="trailing" constant="79" id="sTd-lL-g7r"/>
-                            <constraint firstItem="g11-pQ-yVi" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="88" id="xcN-om-KJR"/>
+                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="leading" secondItem="Udh-jQ-iYE" secondAttribute="leadingMargin" constant="85" id="7e7-AR-Y0T"/>
+                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="top" secondItem="jFt-6k-7KP" secondAttribute="bottom" constant="210" id="DYw-kv-Rw2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8tF-ZK-KcO" secondAttribute="trailing" constant="90" id="psJ-23-EEQ"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="LiE-2S-vCl"/>
-                                <exclude reference="X17-dF-f7f"/>
-                                <exclude reference="sTd-lL-g7r"/>
-                                <exclude reference="0Lx-yj-BJp"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,8 +12,6 @@ import Foundation
 import RealmSwift
 
 class FavoritesViewController: UIViewController {
-   // var favouriteSongs: [String] = songsHelper.favoriteSongs
-    //var favouriteUrls: [String] = songsHelper.favoriteUrls
     var favouriteUrls: [realmString] = []
     var favouriteSongs: [realmString] = []
     var favSongs = RealmHelper.retrieveFavs()
@@ -116,13 +114,12 @@ extension FavoritesViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("favCell", forIndexPath: indexPath) as! CustomCell
          cell.textLabel?.text = favouriteSongs[indexPath.row].stringValue
-      //  cell.textLabel?.text = "hi"
         cell.textLabel!.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         cell.textLabel?.font = UIFont.boldSystemFontOfSize(17.0)
         cell.textLabel?.font = UIFont (name: "Gill Sans", size: 17)
         
         cell.favUrl = favouriteUrls[indexPath.row].stringValue
-        if cell.favUrl == favouriteUrls[cellIndex] {
+        if cell.favUrl == favouriteUrls[cellIndex].stringValue {
             cell.textLabel!.textColor = UIColor(red:0.69, green:0.90, blue:0.49, alpha:1.0)
         }
         
