@@ -14,19 +14,15 @@ import RealmSwift
 class FavoritesViewController: UIViewController {
     var favouriteSongs: [String] = songsHelper.favoriteSongs
     var favouriteUrls: [String] = songsHelper.favoriteUrls
+   // var favSongs = RealmHelper.retrieveFavs()
     var cellIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0);
         self.navigationController?.navigationBarHidden = false
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        print(favouriteUrls)
+        
+      //  print(favSongs)
     }
     
     override func didReceiveMemoryWarning() {
@@ -98,14 +94,16 @@ class FavoritesViewController: UIViewController {
 extension FavoritesViewController: UITableViewDataSource {
     
 
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favouriteSongs.count
+       // return favouriteUrls.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("favCell", forIndexPath: indexPath) as! CustomCell
          cell.textLabel?.text = favouriteSongs[indexPath.row]
-
+      //  cell.textLabel?.text = "hi"
         cell.textLabel!.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         cell.textLabel?.font = UIFont.boldSystemFontOfSize(17.0)
         cell.textLabel?.font = UIFont (name: "Gill Sans", size: 17)
@@ -147,7 +145,7 @@ extension FavoritesViewController: UITableViewDataSource {
     {
         if editingStyle == .Delete
         {
-            favouriteSongs.removeAtIndex(indexPath.row)
+           //favouriteSongs.removeAtIndex(indexPath.row)
             favouriteUrls.removeAtIndex(indexPath.row)
             tableView.reloadData()
         }

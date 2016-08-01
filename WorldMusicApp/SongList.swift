@@ -10,17 +10,18 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 import AVFoundation
+import RealmSwift
 
 class songList: UITableViewController{
     var idArray: [String] = []
-    var previewArray: [String] = []
-    var songsArray: [String] = []
+    var previewArray: [realmString] = []
+    var songsArray: [realmString] = []
     var favSongs: [String] = []
     var favUrls: [String] = []
     var cellIndex = 0
     var country: String = ""
     var countryNoPlus: String = ""
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,8 @@ func storeIdNumbers() {
     //getting the ID number of each album of the country and adding it to an array
 
     if country == "Myanmar+(Burma)" {
+        
+    
         let apiToContact = "https://api.spotify.com/v1/search?q=music+from+burma&type=album"
         Alamofire.request(.GET, apiToContact).validate().responseJSON() { response in
             switch response.result {
@@ -43,11 +46,11 @@ func storeIdNumbers() {
                 if let value = response.result.value {
                     let json = JSON(value)
                     var counter = 0
-                    // print(json["albums"])
                     for(_,_) in json["albums"]{
                         if let albumID = json["albums"]["items"][counter]["id"].string {
                             var albumLinkWithID = "https://api.spotify.com/v1/albums/\(albumID)/tracks"
                             self.idArray.append(albumLinkWithID)
+                            
                             counter+=1
                         }
                     }
@@ -69,7 +72,6 @@ func storeIdNumbers() {
                 if let value = response.result.value {
                     let json = JSON(value)
                     var counter = 0
-                    // print(json["albums"])
                     for(_,_) in json["albums"]{
                         if let albumID = json["albums"]["items"][counter]["id"].string {
                             var albumLinkWithID = "https://api.spotify.com/v1/albums/\(albumID)/tracks"
@@ -236,7 +238,7 @@ func storeIdNumbers() {
                     var counter = 0
                     for(_, _) in json["items"]{
                         if let previewUrl = json["items"][counter]["preview_url"].string {
-                            self.previewArray.append(previewUrl)
+                            self.previewArray.append(realmString(string: previewUrl))
                             counter += 1
                             }
                         }
@@ -264,12 +266,12 @@ func storeIdNumbers() {
                             var counter = 0
                             for(_, _) in json["items"]{
                                 if let songs = json["items"][counter]["name"].string {
-                                    self.songsArray.append(songs)
+                                    self.songsArray.append(realmString(string: songs))
                                     counter += 1
                                 }
                             }
                             self.tableView.reloadData()
-                             print(self.songsArray)
+                           //  print(self.songsArray)
                             break
                     }
                 case .Failure(let error):
@@ -286,13 +288,15 @@ func storeIdNumbers() {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
-        cell.textLabel?.text = songsArray[indexPath.row]
+        
+        cell.textLabel?.text = songsArray[indexPath.row].stringValue
         
         cell.textLabel!.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         cell.textLabel?.font = UIFont.boldSystemFontOfSize(17.0)
         cell.textLabel?.font = UIFont (name: "Gill Sans", size: 17)
+
+        cell.prevUrl = previewArray[indexPath.row].stringValue
         
-        cell.prevUrl = previewArray[indexPath.row]
         if cell.prevUrl == previewArray[cellIndex] {
             cell.textLabel!.textColor = UIColor(red:0.69, green:0.90, blue:0.49, alpha:1.0)
         }
@@ -327,16 +331,23 @@ func storeIdNumbers() {
     
    func playSongs() {
         self.tableView.reloadData()
-        let url = previewArray[cellIndex]
+        let url = previewArray[cellIndex].stringValue
         let playerItem = AVPlayerItem( URL:NSURL( string:url )! )
         player = AVPlayer(playerItem:playerItem)
         player.rate = 1.0
         player.play()
     }
     
+    var songUrl: songsUrls?
+    
     @IBAction func addToFavs(sender: AnyObject) {
-        favSongs.append(songsArray[cellIndex])
-        favUrls.append(previewArray[cellIndex])
+        let songUrl = songsUrls()
+        songUrl.favoriteUrls.append(previewArray[cellIndex])
+        songUrl.favoriteSongs.append(songsArray[cellIndex])
+         RealmHelper.addFavUrls(songUrl)
+        
+        favSongs.append(songsArray[cellIndex].stringValue)
+        favUrls.append(previewArray[cellIndex].stringValue)
         songsHelper.favoriteSongs = favSongs
         songsHelper.favoriteUrls = favUrls
     }
