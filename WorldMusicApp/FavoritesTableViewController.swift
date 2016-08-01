@@ -9,12 +9,12 @@
 import UIKit
 import AVFoundation
 import Foundation
+import RealmSwift
 
 class FavoritesViewController: UIViewController {
     var favouriteSongs: [String] = songsHelper.favoriteSongs
     var favouriteUrls: [String] = songsHelper.favoriteUrls
     var cellIndex = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class FavoritesViewController: UIViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         print(favouriteUrls)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -137,4 +137,20 @@ extension FavoritesViewController: UITableViewDataSource {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         playSongs()
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if editingStyle == .Delete
+        {
+            favouriteSongs.removeAtIndex(indexPath.row)
+            favouriteUrls.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
 }

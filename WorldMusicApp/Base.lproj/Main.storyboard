@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -30,9 +28,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0w-KC-3br">
                                 <rect key="frame" x="276" y="700" width="94" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="YBo-UU-Yoa"/>
+                                    <constraint firstAttribute="width" constant="94" id="usg-nA-q9c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="23"/>
                                 <state key="normal" title="List Songs">
                                     <color key="titleColor" red="0.66666666666666663" green="0.89411764705882357" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -45,7 +43,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="3Gc-NF-YFa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="23"/>
                                 <state key="normal" title="Favorites">
                                     <color key="titleColor" red="0.66666666669999997" green="0.89411764709999997" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -58,13 +56,12 @@
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Jcd-ZF-nbj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="38" id="1FI-Ws-nAY"/>
+                            <constraint firstItem="B0w-KC-3br" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Ef9-XL-hgm"/>
                             <constraint firstItem="Jcd-ZF-nbj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-9" id="LMJ-aK-mb6"/>
-                            <constraint firstItem="B0w-KC-3br" firstAttribute="firstBaseline" secondItem="xUI-mK-ToQ" secondAttribute="baseline" id="OZV-V9-FvZ"/>
+                            <constraint firstItem="B0w-KC-3br" firstAttribute="top" secondItem="Jcd-ZF-nbj" secondAttribute="bottom" constant="2" id="MAO-9L-cub"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xUI-mK-ToQ" secondAttribute="bottom" constant="3" id="Q3F-5X-eXQ"/>
-                            <constraint firstItem="B0w-KC-3br" firstAttribute="baseline" secondItem="xUI-mK-ToQ" secondAttribute="firstBaseline" id="SxP-ni-Tr7"/>
-                            <constraint firstItem="B0w-KC-3br" firstAttribute="top" secondItem="Jcd-ZF-nbj" secondAttribute="bottom" constant="2" id="dt0-lV-iDJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="B0w-KC-3br" secondAttribute="trailing" constant="24" id="lM1-lv-qVc"/>
-                            <constraint firstItem="B0w-KC-3br" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="lsy-fo-0Id"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B0w-KC-3br" secondAttribute="trailing" constant="24" id="hJo-kJ-v0e"/>
+                            <constraint firstItem="B0w-KC-3br" firstAttribute="centerY" secondItem="xUI-mK-ToQ" secondAttribute="centerY" id="nxk-z4-hG7"/>
                             <constraint firstItem="xUI-mK-ToQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="rwD-SX-3pr"/>
                             <constraint firstItem="Jcd-ZF-nbj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t3t-vU-qBK"/>
                             <constraint firstItem="Jcd-ZF-nbj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v77-49-40I"/>

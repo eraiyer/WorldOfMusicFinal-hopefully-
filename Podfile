@@ -7,6 +7,7 @@ use_frameworks!
 target 'WorldMusicApp' do
   pod 'Alamofire', '~> 3.4'
   pod 'SwiftyJSON'
+  pod 'RealmSwift'
   # Pods for WorldMusicApp
 
 end

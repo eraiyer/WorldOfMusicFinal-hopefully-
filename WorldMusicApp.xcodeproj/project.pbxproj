@@ -19,6 +19,19 @@
 		EFDAFE221D3EDC1300ED3DAE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE211D3EDC1300ED3DAE /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EF886B411D4C09A000FACA07 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		45380F9D8A4A69970FEE8858 /* Pods-WorldMusicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldMusicApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldMusicApp/Pods-WorldMusicApp.release.xcconfig"; sourceTree = "<group>"; };
 		800C164A2865AA31DB2F964D /* Pods_WorldMusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldMusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +126,7 @@
 				EF7F66991D33F948004CC839 /* Resources */,
 				25A1C3F42855A0A4750B4CAB /* [CP] Embed Pods Frameworks */,
 				3B44DF63FA1B4C88EA91F504 /* [CP] Copy Pods Resources */,
+				EF886B411D4C09A000FACA07 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
