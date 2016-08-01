@@ -12,9 +12,11 @@ import Foundation
 import RealmSwift
 
 class FavoritesViewController: UIViewController {
-    var favouriteSongs: [String] = songsHelper.favoriteSongs
-    var favouriteUrls: [String] = songsHelper.favoriteUrls
-   // var favSongs = RealmHelper.retrieveFavs()
+   // var favouriteSongs: [String] = songsHelper.favoriteSongs
+    //var favouriteUrls: [String] = songsHelper.favoriteUrls
+    var favouriteUrls: [realmString] = []
+    var favouriteSongs: [realmString] = []
+    var favSongs = RealmHelper.retrieveFavs()
     var cellIndex = 0
     
     override func viewDidLoad() {
@@ -22,7 +24,18 @@ class FavoritesViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0);
         self.navigationController?.navigationBarHidden = false
         
-      //  print(favSongs)
+        var counter = 0
+        while counter < favSongs.count {
+            let song = realmString(string: favSongs[counter].favoriteSongs[0].stringValue)
+            favouriteSongs.append(song)
+            
+            let url = realmString(string: favSongs[counter].favoriteUrls[0].stringValue)
+            favouriteUrls.append(url)
+            
+            counter+=1
+        }
+        
+       print(favSongs)
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,8 +46,8 @@ class FavoritesViewController: UIViewController {
     var player = AVPlayer()
     
     func playSongs() {
-        let url = favouriteUrls[cellIndex]
-        let playerItem = AVPlayerItem( URL:NSURL( string:url )! )
+        let url = favouriteUrls[cellIndex].stringValue
+        let playerItem = AVPlayerItem( URL:NSURL( string: url )! )
         player = AVPlayer(playerItem:playerItem)
         player.rate = 1.0
         player.play()
@@ -102,13 +115,13 @@ extension FavoritesViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("favCell", forIndexPath: indexPath) as! CustomCell
-         cell.textLabel?.text = favouriteSongs[indexPath.row]
+         cell.textLabel?.text = favouriteSongs[indexPath.row].stringValue
       //  cell.textLabel?.text = "hi"
         cell.textLabel!.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         cell.textLabel?.font = UIFont.boldSystemFontOfSize(17.0)
         cell.textLabel?.font = UIFont (name: "Gill Sans", size: 17)
         
-        cell.favUrl = favouriteUrls[indexPath.row]
+        cell.favUrl = favouriteUrls[indexPath.row].stringValue
         if cell.favUrl == favouriteUrls[cellIndex] {
             cell.textLabel!.textColor = UIColor(red:0.69, green:0.90, blue:0.49, alpha:1.0)
         }
@@ -145,7 +158,7 @@ extension FavoritesViewController: UITableViewDataSource {
     {
         if editingStyle == .Delete
         {
-           //favouriteSongs.removeAtIndex(indexPath.row)
+           favouriteSongs.removeAtIndex(indexPath.row)
             favouriteUrls.removeAtIndex(indexPath.row)
             tableView.reloadData()
         }
