@@ -154,9 +154,10 @@ extension FavoritesViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
     {
         if editingStyle == .Delete
-        {
-           favouriteSongs.removeAtIndex(indexPath.row)
-            favouriteUrls.removeAtIndex(indexPath.row)
+        {            
+            RealmHelper.deleteNote(favSongs[indexPath.row])
+            favSongs = RealmHelper.retrieveFavs()
+            
             tableView.reloadData()
         }
     }

@@ -43,7 +43,12 @@ class RealmHelper {
             favsToBeUpdated.favoriteSongs = newFavs.favoriteSongs
         }
     }
-    
+    static func deleteNote(favs: songsUrls) {
+        let realm = try! Realm()
+        try! realm.write() {
+            realm.delete(favs)
+        }
+    }
     static func retrieveFavs() -> Results<songsUrls> {
         let realm = try! Realm()
         return realm.objects(songsUrls)

@@ -19,18 +19,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="headphoneGlobe" translatesAutoresizingMaskIntoConstraints="NO" id="8tF-ZK-KcO">
-                                <rect key="frame" x="105" y="230" width="199" height="224"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphoneGlobe" translatesAutoresizingMaskIntoConstraints="NO" id="8tF-ZK-KcO">
+                                <rect key="frame" x="105" y="230" width="199" height="199"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="8tF-ZK-KcO" secondAttribute="height" multiplier="1:1" id="n6C-CH-bx5"/>
+                                    <constraint firstAttribute="width" secondItem="8tF-ZK-KcO" secondAttribute="height" multiplier="1:1" id="2O3-3v-kdU"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="leading" secondItem="Udh-jQ-iYE" secondAttribute="leadingMargin" constant="85" id="7e7-AR-Y0T"/>
-                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="top" secondItem="jFt-6k-7KP" secondAttribute="bottom" constant="210" id="DYw-kv-Rw2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8tF-ZK-KcO" secondAttribute="trailing" constant="90" id="psJ-23-EEQ"/>
+                            <constraint firstItem="o8U-IL-xSl" firstAttribute="top" secondItem="8tF-ZK-KcO" secondAttribute="bottom" constant="307" id="6Ac-eb-fdI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8tF-ZK-KcO" secondAttribute="trailing" constant="90" id="USK-Ku-l2E"/>
+                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="top" secondItem="jFt-6k-7KP" secondAttribute="bottom" constant="210" id="eT2-U2-jmT"/>
+                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="leading" secondItem="Udh-jQ-iYE" secondAttribute="leadingMargin" constant="85" id="qEu-19-bsn"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
