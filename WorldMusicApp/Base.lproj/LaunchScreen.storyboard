@@ -19,19 +19,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphoneGlobe" translatesAutoresizingMaskIntoConstraints="NO" id="8tF-ZK-KcO">
-                                <rect key="frame" x="78" y="193" width="258" height="289"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphonesEarth" translatesAutoresizingMaskIntoConstraints="NO" id="8tF-ZK-KcO">
+                                <rect key="frame" x="78" y="193" width="258" height="310"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="8tF-ZK-KcO" secondAttribute="height" multiplier="258:289" id="PJP-VZ-q0L"/>
+                                    <constraint firstAttribute="width" secondItem="8tF-ZK-KcO" secondAttribute="height" multiplier="129:155" id="Y9I-iB-wYN"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="top" secondItem="jFt-6k-7KP" secondAttribute="bottom" constant="173" id="M1p-kW-QLZ"/>
-                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="leading" secondItem="Udh-jQ-iYE" secondAttribute="leadingMargin" constant="58" id="Y65-3U-m6S"/>
-                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="centerX" secondItem="Udh-jQ-iYE" secondAttribute="centerX" id="ZmN-cY-dpB"/>
-                            <constraint firstItem="o8U-IL-xSl" firstAttribute="top" secondItem="8tF-ZK-KcO" secondAttribute="bottom" constant="254" id="bkO-Fo-r3O"/>
+                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="leading" secondItem="Udh-jQ-iYE" secondAttribute="leadingMargin" constant="58" id="NV6-RZ-fa7"/>
+                            <constraint firstItem="o8U-IL-xSl" firstAttribute="top" secondItem="8tF-ZK-KcO" secondAttribute="bottom" constant="233" id="YZk-44-DUF"/>
+                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="top" secondItem="jFt-6k-7KP" secondAttribute="bottom" constant="173" id="nY9-sp-yaE"/>
+                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="centerX" secondItem="Udh-jQ-iYE" secondAttribute="centerX" id="vuW-rY-aCY"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -42,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="headphoneGlobe" width="498" height="508"/>
+        <image name="headphonesEarth" width="416" height="440"/>
     </resources>
 </document>
