@@ -24,7 +24,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         let initialLocation = CLLocation(latitude: 36.7783, longitude: -119.4179)
         super.viewDidLoad()
-     //   self.navigationController?.navigationBarHidden = true
         // Do any additional setup after loading the view, typically from a nib.
         centerMapOnLocation(initialLocation)
     }

@@ -350,7 +350,6 @@ func storeIdNumbers() {
         songUrl.favoriteUrls.append(previewArray[cellIndex])
         songUrl.favoriteSongs.append(songsArray[cellIndex])
         songUrl.countryName.append(realmString(string: countryNoPlus))
-        //songUrl.countryName.append(songsArray[cellIndex])
          RealmHelper.addFavUrls(songUrl)
         }
 }
