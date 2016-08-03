@@ -14,7 +14,7 @@ class songsUrls: Object {
 
     var favoriteSongs = List<realmString>()
     var favoriteUrls = List<realmString>()
-    
+    var countryName = List<realmString>()
 }
 
 class realmString : Object {

@@ -334,11 +334,13 @@ func storeIdNumbers() {
     
    func playSongs() {
         self.tableView.reloadData()
+   
         let url = previewArray[cellIndex].stringValue
         let playerItem = AVPlayerItem( URL:NSURL( string:url )! )
         player = AVPlayer(playerItem:playerItem)
         player.rate = 1.0
         player.play()
+    
     }
     
     var songUrl: songsUrls?
@@ -347,6 +349,8 @@ func storeIdNumbers() {
         let songUrl = songsUrls()
         songUrl.favoriteUrls.append(previewArray[cellIndex])
         songUrl.favoriteSongs.append(songsArray[cellIndex])
+        songUrl.countryName.append(realmString(string: countryNoPlus))
+        //songUrl.countryName.append(songsArray[cellIndex])
          RealmHelper.addFavUrls(songUrl)
         }
 }

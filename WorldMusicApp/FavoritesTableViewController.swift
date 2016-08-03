@@ -14,6 +14,7 @@ import RealmSwift
 class FavoritesViewController: UIViewController {
     var favouriteUrls: [realmString] = []
     var favouriteSongs: [realmString] = []
+    var countryNames: [realmString] = []
     var favSongs = RealmHelper.retrieveFavs()
     var cellIndex = 0
     
@@ -29,6 +30,9 @@ class FavoritesViewController: UIViewController {
             
             let url = realmString(string: favSongs[counter].favoriteUrls[0].stringValue)
             favouriteUrls.append(url)
+            
+            let country = realmString(string: favSongs[counter].countryName[0].stringValue)
+            countryNames.append(country)
             
             counter+=1
         }
@@ -112,7 +116,11 @@ extension FavoritesViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("favCell", forIndexPath: indexPath) as! CustomCell
-         cell.textLabel?.text = favouriteSongs[indexPath.row].stringValue
+        if countryNames[indexPath.row].stringValue == "" {
+            countryNames[indexPath.row].stringValue =  "United States"
+        }
+        
+        cell.textLabel?.text = "(" + countryNames[indexPath.row].stringValue + ") " + favouriteSongs[indexPath.row].stringValue
         cell.textLabel!.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         cell.textLabel?.font = UIFont.boldSystemFontOfSize(17.0)
         cell.textLabel?.font = UIFont (name: "Gill Sans", size: 17)

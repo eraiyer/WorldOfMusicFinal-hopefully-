@@ -41,6 +41,7 @@ class RealmHelper {
         try! realm.write() {
             favsToBeUpdated.favoriteUrls = newFavs.favoriteUrls
             favsToBeUpdated.favoriteSongs = newFavs.favoriteSongs
+            favsToBeUpdated.countryName = newFavs.countryName
         }
     }
     static func deleteNote(favs: songsUrls) {
