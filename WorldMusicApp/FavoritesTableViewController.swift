@@ -108,7 +108,6 @@ extension FavoritesViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favouriteSongs.count
-       // return favouriteUrls.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -142,22 +141,23 @@ extension FavoritesViewController: UITableViewDataSource {
     
      func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         cellIndex = indexPath.row
+        tableView.reloadData()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         playSongs()
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
-    {
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
     {
         if editingStyle == .Delete
-        {            
+        {
+            favouriteUrls.removeAtIndex(indexPath.row)
+            favouriteSongs.removeAtIndex(indexPath.row)
             RealmHelper.deleteNote(favSongs[indexPath.row])
             favSongs = RealmHelper.retrieveFavs()
-            
             tableView.reloadData()
         }
     }
