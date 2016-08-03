@@ -53,8 +53,8 @@ func storeIdNumbers() {
                         }
                     }
                     self.tableView.reloadData()
-                    self.storePreviewUrl()
-                    self.storeSongs()
+                 //   self.storePreviewUrl()
+                    self.storeSongsAndUrl()
                     break
                 }
             case .Failure(let error):
@@ -78,8 +78,8 @@ func storeIdNumbers() {
                         }
                     }
                     self.tableView.reloadData()
-                    self.storePreviewUrl()
-                    self.storeSongs()
+           //         self.storePreviewUrl()
+                    self.storeSongsAndUrl()
                     break
                 }
             case .Failure(let error):
@@ -88,7 +88,7 @@ func storeIdNumbers() {
         }
         
     }
-   else if country == "United+States" {
+    if country == "United+States" {
         //let apiToContact = "https://api.spotify.com/v1/search?q=rock+music&type=album"
         let apiToContact = "https://api.spotify.com/v1/search?q=2015+songs&type=album"
         Alamofire.request(.GET, apiToContact).validate().responseJSON() { response in
@@ -105,9 +105,9 @@ func storeIdNumbers() {
                             counter+=1
                         }
                     }
+                    self.storeSongsAndUrl()
                     self.tableView.reloadData()
-                    self.storePreviewUrl()
-                    self.storeSongs()
+                    //self.storePreviewUrl()
                     break
                 }
             case .Failure(let error):
@@ -115,7 +115,7 @@ func storeIdNumbers() {
             }
         }
     }
-    else if country == "Iceland" {
+   else if country == "Iceland" {
         let apiToContact = "https://api.spotify.com/v1/search?q=iceland&type=album"
         Alamofire.request(.GET, apiToContact).validate().responseJSON() { response in
             switch response.result {
@@ -123,7 +123,6 @@ func storeIdNumbers() {
                 if let value = response.result.value {
                     let json = JSON(value)
                     var counter = 0
-                    // print(json["albums"])
                     for(_,_) in json["albums"]{
                         if let albumID = json["albums"]["items"][counter]["id"].string {
                             var albumLinkWithID = "https://api.spotify.com/v1/albums/\(albumID)/tracks"
@@ -132,8 +131,8 @@ func storeIdNumbers() {
                         }
                     }
                     self.tableView.reloadData()
-                    self.storePreviewUrl()
-                    self.storeSongs()
+                  //  self.storePreviewUrl()
+                    self.storeSongsAndUrl()
                     break
                 }
             case .Failure(let error):
@@ -159,8 +158,8 @@ func storeIdNumbers() {
                     }
                     
                     self.tableView.reloadData()
-                    self.storePreviewUrl()
-                    self.storeSongs()
+                    //self.storePreviewUrl()
+                    self.storeSongsAndUrl()
                     break
                 }
             case .Failure(let error):
@@ -186,8 +185,8 @@ func storeIdNumbers() {
                     }
                     
                     self.tableView.reloadData()
-                    self.storePreviewUrl()
-                    self.storeSongs()
+                    //self.storePreviewUrl()
+                    self.storeSongsAndUrl()
                     break
                 }
             case .Failure(let error):
@@ -213,9 +212,9 @@ func storeIdNumbers() {
                             }
                         }
                       
-                        self.storeSongs()
+                        self.storeSongsAndUrl()
                          self.tableView.reloadData()
-                       self.storePreviewUrl()
+                      // self.storePreviewUrl()
                        
                        break
                     }
@@ -226,7 +225,7 @@ func storeIdNumbers() {
     }
 }
     
-    func storePreviewUrl(){
+   /* func storePreviewUrl(){
     var idCounter =  0
     while idCounter < self.idArray.count {
         let apiToContact = self.idArray[idCounter]
@@ -243,7 +242,8 @@ func storeIdNumbers() {
                             }
                         }
                     self.tableView.reloadData()
-                    print(self.previewArray)
+                    //print(self.previewArray)
+                   // print(self.previewArray.count)
                     break
                     }
                 case .Failure(let error):
@@ -252,8 +252,8 @@ func storeIdNumbers() {
             }
         idCounter += 1
     }
-}
-   func storeSongs(){
+}*/
+   func storeSongsAndUrl(){
         self.songsArray = []
         var idCounter =  0
         while idCounter < self.idArray.count {
@@ -263,15 +263,20 @@ func storeIdNumbers() {
                     case .Success:
                         if let value = response.result.value {
                             let json = JSON(value)
-                            var counter = 0
+                            var urlCounter = 0
+                            var songCounter = 0
                             for(_, _) in json["items"]{
-                                if let songs = json["items"][counter]["name"].string {
+                                if let songs = json["items"][songCounter]["name"].string {
                                     self.songsArray.append(realmString(string: songs))
-                                    counter += 1
+                                    songCounter += 1
                                 }
+                                if let previewUrl = json["items"][urlCounter]["preview_url"].string {
+                                    self.previewArray.append(realmString(string: previewUrl))
+                                    urlCounter += 1
+                                }
+
                             }
                             self.tableView.reloadData()
-                            print(self.songsArray)
                             break
                     }
                 case .Failure(let error):
@@ -280,7 +285,6 @@ func storeIdNumbers() {
             }
             idCounter += 1
     }
-//    self.storePreviewUrl()
  }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
