@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,19 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphonesEarth" translatesAutoresizingMaskIntoConstraints="NO" id="8tF-ZK-KcO">
-                                <rect key="frame" x="78" y="193" width="258" height="310"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="8tF-ZK-KcO" secondAttribute="height" multiplier="129:155" id="Y9I-iB-wYN"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphonesEarth1" translatesAutoresizingMaskIntoConstraints="NO" id="dIE-3e-R6A">
+                                <rect key="frame" x="45" y="193" width="341" height="350"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.67987483164479989" green="0.66580606185359359" blue="0.68072916666666661" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="leading" secondItem="Udh-jQ-iYE" secondAttribute="leadingMargin" constant="58" id="NV6-RZ-fa7"/>
-                            <constraint firstItem="o8U-IL-xSl" firstAttribute="top" secondItem="8tF-ZK-KcO" secondAttribute="bottom" constant="233" id="YZk-44-DUF"/>
-                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="top" secondItem="jFt-6k-7KP" secondAttribute="bottom" constant="173" id="nY9-sp-yaE"/>
-                            <constraint firstItem="8tF-ZK-KcO" firstAttribute="centerX" secondItem="Udh-jQ-iYE" secondAttribute="centerX" id="vuW-rY-aCY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dIE-3e-R6A" secondAttribute="trailing" constant="8" id="Pz2-ko-66X"/>
+                            <constraint firstItem="dIE-3e-R6A" firstAttribute="leading" secondItem="Udh-jQ-iYE" secondAttribute="leadingMargin" constant="25" id="cOD-vR-cuh"/>
+                            <constraint firstItem="dIE-3e-R6A" firstAttribute="top" secondItem="jFt-6k-7KP" secondAttribute="bottom" constant="173" id="iKa-0F-45d"/>
+                            <constraint firstItem="dIE-3e-R6A" firstAttribute="centerY" secondItem="Udh-jQ-iYE" secondAttribute="centerY" id="q8V-XR-rkA"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -42,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="headphonesEarth" width="416" height="440"/>
+        <image name="headphonesEarth1" width="416" height="440"/>
     </resources>
 </document>

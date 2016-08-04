@@ -24,14 +24,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         let initialLocation = CLLocation(latitude: 36.7783, longitude: -119.4179)
         super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.navigationBar.titleTextAttributes =
+            ([NSFontAttributeName: UIFont(name: "Euphemia UCAS", size: 25)!,
+                NSForegroundColorAttributeName: UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)])
+                    
+        self.navigationItem.title = "World Of Music"
+
         // Do any additional setup after loading the view, typically from a nib.
         centerMapOnLocation(initialLocation)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    /*override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewDidAppear(animated)
-    }
+    }*/
     
     let regionRadius: CLLocationDistance = 7000000
     func centerMapOnLocation(location: CLLocation) {

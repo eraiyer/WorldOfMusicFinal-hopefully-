@@ -30,7 +30,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="usg-nA-q9c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="19"/>
                                 <state key="normal" title="List Songs">
                                     <color key="titleColor" red="0.66666666666666663" green="0.89411764705882357" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -43,7 +43,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="3Gc-NF-YFa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="19"/>
                                 <state key="normal" title="Favorites">
                                     <color key="titleColor" red="0.66666666669999997" green="0.89411764709999997" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -202,6 +202,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YzM-dN-Fil"/>
+        <segue reference="TC4-kQ-kmS"/>
     </inferredMetricsTieBreakers>
 </document>

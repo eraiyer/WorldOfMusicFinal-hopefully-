@@ -224,35 +224,7 @@ func storeIdNumbers() {
         }
     }
 }
-    
-   /* func storePreviewUrl(){
-    var idCounter =  0
-    while idCounter < self.idArray.count {
-        let apiToContact = self.idArray[idCounter]
-        Alamofire.request(.GET, apiToContact).validate().responseJSON() { response in
-            switch response.result {
-                case .Success:
-                if let value = response.result.value {
-                    let json = JSON(value)
-                    var counter = 0
-                    for(_, _) in json["items"]{
-                        if let previewUrl = json["items"][counter]["preview_url"].string {
-                            self.previewArray.append(realmString(string: previewUrl))
-                            counter += 1
-                            }
-                        }
-                    self.tableView.reloadData()
-                    //print(self.previewArray)
-                   // print(self.previewArray.count)
-                    break
-                    }
-                case .Failure(let error):
-                print(error)
-                }
-            }
-        idCounter += 1
-    }
-}*/
+
    func storeSongsAndUrl(){
         self.songsArray = []
         var idCounter =  0
@@ -298,7 +270,7 @@ func storeIdNumbers() {
         
         cell.textLabel!.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         cell.textLabel?.font = UIFont.boldSystemFontOfSize(17.0)
-        cell.textLabel?.font = UIFont (name: "Gill Sans", size: 17)
+        cell.textLabel?.font = UIFont (name: "Euphemia UCAS", size: 15)
         
         if previewArray.count > 0 {
         cell.prevUrl = previewArray[indexPath.row].stringValue
@@ -324,7 +296,7 @@ func storeIdNumbers() {
         label.text = countryNoPlus
         label.textAlignment = .Center
         label.font = UIFont.boldSystemFontOfSize(19.0)
-        label.font = UIFont (name: "Gill Sans", size: 25)
+        label.font = UIFont (name: "Euphemia UCAS", size: 20)
         label.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         label.backgroundColor = UIColor.blackColor()
         return label
