@@ -73,7 +73,7 @@ extension FavoritesViewController: UITableViewDataSource {
         cell.textLabel?.text = "(" + countryNames[indexPath.row].stringValue + ") " + favouriteSongs[indexPath.row].stringValue
         cell.textLabel!.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         cell.textLabel?.font = UIFont.boldSystemFontOfSize(17.0)
-        cell.textLabel?.font = UIFont (name: "Euphemia UCAS", size: 15)
+        cell.textLabel?.font = UIFont (name: "Helvetica Neue", size: 15)
         
         cell.favUrl = favouriteUrls[indexPath.row].stringValue
         if cell.favUrl == favouriteUrls[cellIndex].stringValue {
@@ -88,7 +88,7 @@ extension FavoritesViewController: UITableViewDataSource {
         label.text = "Favorites"
         label.textAlignment = .Center
         label.font = UIFont.boldSystemFontOfSize(19.0)
-        label.font = UIFont (name: "Euphemia UCAS", size: 20)
+        label.font = UIFont (name: "Helvetica Neue", size: 20)
         label.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         label.backgroundColor = UIColor.blackColor()
         return label

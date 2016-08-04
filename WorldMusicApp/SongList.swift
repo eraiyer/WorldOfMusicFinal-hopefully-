@@ -270,7 +270,7 @@ func storeIdNumbers() {
         
         cell.textLabel!.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         cell.textLabel?.font = UIFont.boldSystemFontOfSize(17.0)
-        cell.textLabel?.font = UIFont (name: "Euphemia UCAS", size: 15)
+        cell.textLabel?.font = UIFont (name: "Helvetica Neue", size: 15)
         
         if previewArray.count > 0 {
         cell.prevUrl = previewArray[indexPath.row].stringValue
@@ -296,7 +296,7 @@ func storeIdNumbers() {
         label.text = countryNoPlus
         label.textAlignment = .Center
         label.font = UIFont.boldSystemFontOfSize(19.0)
-        label.font = UIFont (name: "Euphemia UCAS", size: 20)
+        label.font = UIFont (name: "Helvetica Neue", size: 20)
         label.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
         label.backgroundColor = UIColor.blackColor()
         return label

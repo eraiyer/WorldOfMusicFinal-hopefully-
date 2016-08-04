@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         self.navigationController?.navigationBar.titleTextAttributes =
-            ([NSFontAttributeName: UIFont(name: "Euphemia UCAS", size: 25)!,
+            ([NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 20)!,
                 NSForegroundColorAttributeName: UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)])
                     
         self.navigationItem.title = "World Of Music"

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,15 +20,18 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphonesEarth1" translatesAutoresizingMaskIntoConstraints="NO" id="dIE-3e-R6A">
-                                <rect key="frame" x="45" y="193" width="341" height="350"/>
+                                <rect key="frame" x="115" y="230" width="184" height="231"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dIE-3e-R6A" secondAttribute="height" multiplier="184:231" id="rSA-TV-jGi"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.67987483164479989" green="0.66580606185359359" blue="0.68072916666666661" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.9233405904817219" green="1" blue="0.94796681342352296" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="dIE-3e-R6A" secondAttribute="trailing" constant="8" id="Pz2-ko-66X"/>
-                            <constraint firstItem="dIE-3e-R6A" firstAttribute="leading" secondItem="Udh-jQ-iYE" secondAttribute="leadingMargin" constant="25" id="cOD-vR-cuh"/>
-                            <constraint firstItem="dIE-3e-R6A" firstAttribute="top" secondItem="jFt-6k-7KP" secondAttribute="bottom" constant="173" id="iKa-0F-45d"/>
-                            <constraint firstItem="dIE-3e-R6A" firstAttribute="centerY" secondItem="Udh-jQ-iYE" secondAttribute="centerY" id="q8V-XR-rkA"/>
+                            <constraint firstItem="dIE-3e-R6A" firstAttribute="top" secondItem="jFt-6k-7KP" secondAttribute="bottom" constant="210" id="AcC-JE-rkS"/>
+                            <constraint firstItem="dIE-3e-R6A" firstAttribute="leading" secondItem="Udh-jQ-iYE" secondAttribute="leadingMargin" constant="95" id="an1-aV-D0q"/>
+                            <constraint firstItem="o8U-IL-xSl" firstAttribute="top" secondItem="dIE-3e-R6A" secondAttribute="bottom" constant="275" id="biG-zI-6dV"/>
+                            <constraint firstItem="dIE-3e-R6A" firstAttribute="centerX" secondItem="Udh-jQ-iYE" secondAttribute="centerX" id="uU5-IY-yk4"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
