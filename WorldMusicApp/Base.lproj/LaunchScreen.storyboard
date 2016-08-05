@@ -20,19 +20,42 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphonesEarth1" translatesAutoresizingMaskIntoConstraints="NO" id="dIE-3e-R6A">
-                                <rect key="frame" x="115" y="230" width="184" height="231"/>
+                                <rect key="frame" x="107" y="268" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="dIE-3e-R6A" secondAttribute="height" multiplier="184:231" id="rSA-TV-jGi"/>
+                                    <constraint firstAttribute="width" secondItem="dIE-3e-R6A" secondAttribute="height" multiplier="184:231" id="ZrU-zz-b2N"/>
+                                    <constraint firstAttribute="width" constant="200" id="c4U-tN-VyK"/>
+                                    <constraint firstAttribute="width" secondItem="dIE-3e-R6A" secondAttribute="height" multiplier="1:1" id="rSA-TV-jGi"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ZrU-zz-b2N"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.9233405904817219" green="1" blue="0.94796681342352296" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="dIE-3e-R6A" firstAttribute="centerX" secondItem="Udh-jQ-iYE" secondAttribute="centerX" id="2aH-Nm-gzn"/>
                             <constraint firstItem="dIE-3e-R6A" firstAttribute="top" secondItem="jFt-6k-7KP" secondAttribute="bottom" constant="210" id="AcC-JE-rkS"/>
+                            <constraint firstItem="dIE-3e-R6A" firstAttribute="top" secondItem="jFt-6k-7KP" secondAttribute="bottom" constant="210" id="Bvl-4S-Wm9"/>
+                            <constraint firstItem="dIE-3e-R6A" firstAttribute="centerY" secondItem="Udh-jQ-iYE" secondAttribute="centerY" id="Ntk-qq-nwJ"/>
                             <constraint firstItem="dIE-3e-R6A" firstAttribute="leading" secondItem="Udh-jQ-iYE" secondAttribute="leadingMargin" constant="95" id="an1-aV-D0q"/>
                             <constraint firstItem="o8U-IL-xSl" firstAttribute="top" secondItem="dIE-3e-R6A" secondAttribute="bottom" constant="275" id="biG-zI-6dV"/>
+                            <constraint firstItem="o8U-IL-xSl" firstAttribute="top" secondItem="dIE-3e-R6A" secondAttribute="bottom" constant="275" id="iEQ-SD-fYw"/>
+                            <constraint firstItem="dIE-3e-R6A" firstAttribute="leading" secondItem="Udh-jQ-iYE" secondAttribute="leadingMargin" constant="95" id="oyE-zv-rcN"/>
                             <constraint firstItem="dIE-3e-R6A" firstAttribute="centerX" secondItem="Udh-jQ-iYE" secondAttribute="centerX" id="uU5-IY-yk4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="AcC-JE-rkS"/>
+                                <exclude reference="Bvl-4S-Wm9"/>
+                                <exclude reference="an1-aV-D0q"/>
+                                <exclude reference="oyE-zv-rcN"/>
+                                <exclude reference="uU5-IY-yk4"/>
+                                <exclude reference="biG-zI-6dV"/>
+                                <exclude reference="iEQ-SD-fYw"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
