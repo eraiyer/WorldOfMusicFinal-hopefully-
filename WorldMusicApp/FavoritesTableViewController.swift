@@ -47,13 +47,45 @@ class FavoritesViewController: UIViewController {
     var player = AVPlayer()
     
     func playSongs() {
-        let url = favouriteUrls[cellIndex].stringValue
-        let playerItem = AVPlayerItem( URL:NSURL( string: url )! )
-        player = AVPlayer(playerItem:playerItem)
-        player.rate = 1.0
-        player.play()
+//        let url = favouriteUrls[cellIndex].stringValue
+//        let playerItem = AVPlayerItem( URL:NSURL( string: url )! )
+//        player = AVPlayer(playerItem:playerItem)
+//        player.rate = 1.0
+//        player.play()
+        let urlstring = favouriteUrls[cellIndex].stringValue
+        let url = NSURL(string: urlstring)
+        print("the url = \(url!)")
+        downloadFileFromURL(url!)
     }
-
+    
+    func downloadFileFromURL(url:NSURL){
+        var downloadTask:NSURLSessionDownloadTask
+        downloadTask = NSURLSession.sharedSession().downloadTaskWithURL(url, completionHandler: { (URL, response, error) -> Void in
+            print("error: \(error)")
+            
+            let changeToMp3 = "\(URL)".stringByReplacingOccurrencesOfString(".tmp", withString: ".mp3")
+            
+            if let songURL = URL{
+                self.play(songURL)
+            }
+            
+        })
+        
+        downloadTask.resume()
+        
+    }
+    
+    var audioPlayer: AVAudioPlayer!
+    
+    func play(url:NSURL) {
+        print("playing \(url)")
+        
+        audioPlayer = try! AVAudioPlayer(contentsOfURL: url, fileTypeHint: nil)
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+        
+    }
+    
 }
 
 extension FavoritesViewController: UITableViewDataSource {

@@ -323,11 +323,6 @@ func storeIdNumbers() {
         player.rate = 1.0
         player.play()*/
     
-      //  print("duration: \(playerItem.duration)")
-    
-   /* player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
-    player.addObserver(self, forKeyPath: "rate", options: NSKeyValueObservingOptions.New, context: nil)*/
-    
     let urlstring = previewArray[cellIndex].stringValue
     let url = NSURL(string: urlstring)
     print("the url = \(url!)")
@@ -337,30 +332,16 @@ func storeIdNumbers() {
     
     func downloadFileFromURL(url:NSURL){
         var downloadTask:NSURLSessionDownloadTask
-       // downloadTask = NSURLSession.sharedSession().downloadTaskWithURL(url, completionHandler: { (URL, response, error) -> Void in
         downloadTask = NSURLSession.sharedSession().downloadTaskWithURL(url, completionHandler: { (URL, response, error) -> Void in
             print("error: \(error)")
 
             let changeToMp3 = "\(URL)".stringByReplacingOccurrencesOfString(".tmp", withString: ".mp3")
-            /*do {
-                let documentDirectory = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0])
-                let originPath = documentDirectory.URLByAppendingPathComponent("/URL")
-                let destinationPath = documentDirectory.URLByAppendingPathComponent("/changeToMp3.mp3")
-                try NSFileManager.defaultManager().moveItemAtURL(originPath, toURL: destinationPath)
-            } catch let error as NSError {
-                print(error)
+            
+            if let songURL = URL{
+                self.play(songURL)
             }
             
-            let fileManager = NSFileManager.defaultManager()
-            do {
-                try fileManager.moveItemAtPath("\(URL?.absoluteString)", toPath: "\(changeToMp3)")
-                
-            }
-            catch let error as NSError {
-                print("Ooops! Something went wrong: \(error)")
-            }*/
-            
-            self.play(URL!)
+            //self.play(URL!)
         })
         
         downloadTask.resume()
@@ -385,7 +366,7 @@ func storeIdNumbers() {
         } catch {
             print("AVAudioPlayer init failed")
         }*/
-        let testURL = NSURL(fileURLWithPath: "/Users/eraiyer/Desktop/sampleSong.mp3")
+        //let testURL = NSURL(fileURLWithPath: "/Users/eraiyer/Desktop/sampleSong.mp3")
         
         audioPlayer = try! AVAudioPlayer(contentsOfURL: url, fileTypeHint: nil)
         audioPlayer.prepareToPlay()
@@ -393,40 +374,6 @@ func storeIdNumbers() {
         
     }
     
-    /*var player: AVAudioPlayer?
-
-    func playSongs() {
-      let audioUrl = NSURL(fileURLWithPath: String(previewArray[cellIndex].stringValue))
-        if audioUrl == NSURL(fileURLWithPath: String(previewArray[cellIndex].stringValue)) {
-        // then lets create your document folder url
-        let documentsDirectoryURL =  NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-        
-        // lets create your destination file url
-        let destinationUrl = documentsDirectoryURL.URLByAppendingPathComponent(audioUrl.lastPathComponent ?? "audio.mp3")
-        print(destinationUrl)
-        
-        // to check if it exists before downloading it
-        if NSFileManager().fileExistsAtPath(destinationUrl.path!) {
-            print("The file already exists at path")
-            
-            // if the file doesn't exist
-        }
-        else {
-            
-            // you can use NSURLSession.sharedSession to download the data asynchronously
-            NSURLSession.sharedSession().downloadTaskWithURL(audioUrl, completionHandler: { (location, response, error) -> Void in
-                guard let loc = location where error == nil else { return }
-                do {
-                    // after downloading your file you need to move it to your destination url
-                    try NSFileManager().moveItemAtURL(loc, toURL: destinationUrl)
-                    print("File moved to documents folder")
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-            }).resume()
-        }
-    }
-}*/
     
     var songUrl: songsUrls?
     
@@ -439,18 +386,6 @@ func storeIdNumbers() {
         }
     
     
-   /* override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-        
-        if (keyPath == "status") {
-            print(player.status)
-        }
-    }
-    
-    private func deallocObservers(player: AVPlayer) {
-        player.removeObserver(self, forKeyPath: "status")
-        //player.removeObserver(self, forKeyPath: "rate")
-    }*/
     
 }
 
