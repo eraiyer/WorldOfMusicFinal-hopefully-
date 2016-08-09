@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6E44954AE96FA137C5FCD99E /* Pods_WorldMusicApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800C164A2865AA31DB2F964D /* Pods_WorldMusicApp.framework */; };
+		EF35A2F01D5990E4007449FC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF35A2EF1D5990E4007449FC /* Default-568h@2x.png */; };
 		EF7F669F1D33F948004CC839 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7F669E1D33F948004CC839 /* AppDelegate.swift */; };
 		EF7F66A11D33F948004CC839 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7F66A01D33F948004CC839 /* ViewController.swift */; };
 		EF7F66A41D33F949004CC839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF7F66A21D33F949004CC839 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		45380F9D8A4A69970FEE8858 /* Pods-WorldMusicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldMusicApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldMusicApp/Pods-WorldMusicApp.release.xcconfig"; sourceTree = "<group>"; };
 		800C164A2865AA31DB2F964D /* Pods_WorldMusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldMusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF35A2EF1D5990E4007449FC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EF7F669B1D33F948004CC839 /* WorldMusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldMusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF7F669E1D33F948004CC839 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF7F66A01D33F948004CC839 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		EF7F66921D33F948004CC839 = {
 			isa = PBXGroup;
 			children = (
+				EF35A2EF1D5990E4007449FC /* Default-568h@2x.png */,
 				EF7F669D1D33F948004CC839 /* WorldMusicApp */,
 				EF7F669C1D33F948004CC839 /* Products */,
 				73DFCB5EB48D305DB394436E /* Pods */,
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7F66A91D33F949004CC839 /* LaunchScreen.storyboard in Resources */,
+				EF35A2F01D5990E4007449FC /* Default-568h@2x.png in Resources */,
 				EF7F66A61D33F949004CC839 /* Assets.xcassets in Resources */,
 				EF7F66A41D33F949004CC839 /* Main.storyboard in Resources */,
 			);

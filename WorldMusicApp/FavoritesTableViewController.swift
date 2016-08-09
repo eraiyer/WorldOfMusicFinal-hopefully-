@@ -120,4 +120,5 @@ extension FavoritesViewController: UITableViewDataSource {
         }
     }
     
+    
 }

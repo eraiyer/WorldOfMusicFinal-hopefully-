@@ -8,8 +8,10 @@
 
 import UIKit
 
+
 class CustomCell: UITableViewCell {
 
     var prevUrl = ""
     var favUrl = ""
+
 }
