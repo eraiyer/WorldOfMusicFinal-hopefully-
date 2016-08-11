@@ -20,7 +20,9 @@ class FavoritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0);
+        self.navigationController?.navigationBar.tintColor = UIColor(red:0.79, green:0.82, blue:0.80, alpha:1.0)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.12, green: 0.12, blue: 0.14, alpha: 1.0)
+        
         self.navigationController?.navigationBarHidden = false
         
         var counter = 0
@@ -43,15 +45,15 @@ class FavoritesViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     var player = AVPlayer()
     
     func playSongs() {
-//        let url = favouriteUrls[cellIndex].stringValue
-//        let playerItem = AVPlayerItem( URL:NSURL( string: url )! )
-//        player = AVPlayer(playerItem:playerItem)
-//        player.rate = 1.0
-//        player.play()
+        //        let url = favouriteUrls[cellIndex].stringValue
+        //        let playerItem = AVPlayerItem( URL:NSURL( string: url )! )
+        //        player = AVPlayer(playerItem:playerItem)
+        //        player.rate = 1.0
+        //        player.play()
         let urlstring = favouriteUrls[cellIndex].stringValue
         let url = NSURL(string: urlstring)
         print("the url = \(url!)")
@@ -90,26 +92,27 @@ class FavoritesViewController: UIViewController {
 
 extension FavoritesViewController: UITableViewDataSource {
     
-
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favouriteSongs.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        tableView.backgroundColor = UIColor(red:0.12, green: 0.12, blue: 0.14, alpha: 1.0)
         let cell = tableView.dequeueReusableCellWithIdentifier("favCell", forIndexPath: indexPath) as! CustomCell
         if countryNames[indexPath.row].stringValue == "" {
             countryNames[indexPath.row].stringValue =  "United States"
         }
         
         cell.textLabel?.text = "(" + countryNames[indexPath.row].stringValue + ") " + favouriteSongs[indexPath.row].stringValue
-        cell.textLabel!.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
+        cell.textLabel!.textColor =  UIColor(red:0.79, green:0.82, blue:0.80, alpha:1.0)
         cell.textLabel?.font = UIFont.boldSystemFontOfSize(17.0)
         cell.textLabel?.font = UIFont (name: "Helvetica Neue", size: 15)
         
         cell.favUrl = favouriteUrls[indexPath.row].stringValue
         if cell.favUrl == favouriteUrls[cellIndex].stringValue {
-            cell.textLabel!.textColor = UIColor(red:0.69, green:0.90, blue:0.49, alpha:1.0)
+            cell.textLabel!.textColor = UIColor(red:0.0, green:0.81, blue:0.67, alpha:1.0)
         }
         
         return cell
@@ -120,16 +123,17 @@ extension FavoritesViewController: UITableViewDataSource {
         label.text = "Favorites"
         label.textAlignment = .Center
         label.font = UIFont.boldSystemFontOfSize(19.0)
-        label.font = UIFont (name: "Helvetica Neue", size: 20)
-        label.textColor =  UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)
-        label.backgroundColor = UIColor.blackColor()
+        label.font = UIFont (name: "Helvetica Neue", size: 22)
+        label.textColor =  UIColor(red:0.79, green:0.82, blue:0.80, alpha:1.0)
+        //label.backgroundColor = UIColor.blackColor()
+        label.backgroundColor = UIColor(red:0.12, green: 0.12, blue: 0.14, alpha: 1.0)
         return label
     }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40.0
     }
     
-     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         cellIndex = indexPath.row
         tableView.reloadData()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

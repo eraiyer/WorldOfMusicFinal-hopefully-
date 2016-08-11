@@ -27,18 +27,6 @@
                                     <outletCollection property="gestureRecognizers" destination="kWD-ci-NxU" appends="YES" id="Zxr-Mi-Q4b"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUI-mK-ToQ">
-                                <rect key="frame" x="59" y="690" width="34" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="1Q7-xl-6ms"/>
-                                </constraints>
-                                <state key="normal" title="Favorites" image="Star">
-                                    <color key="titleColor" red="0.66666666669999997" green="0.89411764709999997" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="z1S-Hv-wAe" kind="show" id="YzM-dN-Fil"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH4-Ch-q8Y">
                                 <rect key="frame" x="45" y="724" width="62" height="12"/>
                                 <constraints>
@@ -59,26 +47,39 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0w-KC-3br">
                                 <rect key="frame" x="322" y="687" width="37" height="34"/>
-                                <state key="normal" image="Musical Notes-96">
+                                <state key="normal" image="TealMusical Notes-10">
                                     <color key="titleColor" red="0.66666666666666663" green="0.89411764705882357" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="4BO-U5-V4e" kind="show" identifier="toSongList" id="hZc-zx-jrC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUI-mK-ToQ">
+                                <rect key="frame" x="59" y="687" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="Eg1-Kf-PHr"/>
+                                </constraints>
+                                <state key="normal" title="Favorites" image="TealStar Filled-100">
+                                    <color key="titleColor" red="0.66666666669999997" green="0.89411764709999997" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="z1S-Hv-wAe" kind="show" id="YzM-dN-Fil"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="xUI-mK-ToQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="39" id="0UE-98-cm9"/>
-                            <constraint firstItem="B0w-KC-3br" firstAttribute="bottom" secondItem="xUI-mK-ToQ" secondAttribute="bottom" id="1tR-lE-xnH"/>
                             <constraint firstAttribute="bottomMargin" secondItem="KdR-PY-hbL" secondAttribute="bottom" constant="-1" id="2zq-Y3-snl"/>
+                            <constraint firstItem="xUI-mK-ToQ" firstAttribute="centerX" secondItem="gH4-Ch-q8Y" secondAttribute="centerX" id="43z-vH-619"/>
                             <constraint firstItem="KdR-PY-hbL" firstAttribute="firstBaseline" secondItem="gH4-Ch-q8Y" secondAttribute="baseline" id="59L-b7-0ys"/>
                             <constraint firstAttribute="trailingMargin" secondItem="B0w-KC-3br" secondAttribute="trailing" constant="35" id="7R3-1U-crP"/>
                             <constraint firstItem="gH4-Ch-q8Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="8B4-xi-lR5"/>
-                            <constraint firstItem="xUI-mK-ToQ" firstAttribute="centerX" secondItem="gH4-Ch-q8Y" secondAttribute="centerX" id="C9Z-l2-tAs"/>
+                            <constraint firstItem="xUI-mK-ToQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="39" id="C7O-xh-i8R"/>
+                            <constraint firstItem="xUI-mK-ToQ" firstAttribute="bottom" secondItem="B0w-KC-3br" secondAttribute="bottom" id="ImO-VW-PAy"/>
                             <constraint firstItem="gH4-Ch-q8Y" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="LOq-AR-jFg"/>
-                            <constraint firstItem="xUI-mK-ToQ" firstAttribute="top" secondItem="Jcd-ZF-nbj" secondAttribute="bottom" constant="6" id="PGg-PR-KLM"/>
+                            <constraint firstItem="gH4-Ch-q8Y" firstAttribute="top" secondItem="xUI-mK-ToQ" secondAttribute="bottom" constant="3" id="McN-ey-Fp6"/>
+                            <constraint firstItem="xUI-mK-ToQ" firstAttribute="top" secondItem="B0w-KC-3br" secondAttribute="top" id="QwQ-Vo-fX6"/>
                             <constraint firstItem="Jcd-ZF-nbj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aVZ-s6-918"/>
                             <constraint firstItem="B0w-KC-3br" firstAttribute="centerX" secondItem="KdR-PY-hbL" secondAttribute="centerX" id="eHq-ae-Ada"/>
                             <constraint firstItem="gH4-Ch-q8Y" firstAttribute="top" secondItem="Jcd-ZF-nbj" secondAttribute="bottom" constant="40" id="f8J-Aa-0cZ"/>
@@ -86,7 +87,6 @@
                             <constraint firstItem="B0w-KC-3br" firstAttribute="top" secondItem="Jcd-ZF-nbj" secondAttribute="bottom" constant="3" id="gIk-9w-53W"/>
                             <constraint firstItem="Jcd-ZF-nbj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="38" id="hLO-2N-hKd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KdR-PY-hbL" secondAttribute="trailing" constant="20" id="mdx-d2-8l7"/>
-                            <constraint firstItem="gH4-Ch-q8Y" firstAttribute="top" secondItem="xUI-mK-ToQ" secondAttribute="bottom" constant="3" id="yiK-5j-Hb2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5rM-Ob-sk6"/>
@@ -127,10 +127,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pac-D5-kUl" id="dPM-30-ilg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" red="0.66666666669999997" green="0.89411764709999997" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="0.66666666669999997" green="0.89411764709999997" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
@@ -170,11 +170,11 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HGH-in-jp6" id="iFc-xn-ogm">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.23436752208843009" green="0.61260221878922827" blue="0.70564903846153848" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
@@ -225,10 +225,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Musical Notes-96" width="96" height="96"/>
-        <image name="Star" width="96" height="96"/>
+        <image name="TealMusical Notes-10" width="100" height="100"/>
+        <image name="TealStar Filled-100" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TC4-kQ-kmS"/>
+        <segue reference="YzM-dN-Fil"/>
     </inferredMetricsTieBreakers>
 </document>

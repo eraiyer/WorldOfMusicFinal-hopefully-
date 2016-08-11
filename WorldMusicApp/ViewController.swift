@@ -12,10 +12,10 @@ import CoreLocation
 
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var mapView: MKMapView!
-   
-
+    
+    
     var idArray: [String] = []
     var previewArray: [String] = []
     var countryWithPlus: String = ""
@@ -26,20 +26,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         self.navigationController?.navigationBar.titleTextAttributes =
-            ([NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 20)!,
-                NSForegroundColorAttributeName: UIColor(red:0.72, green:0.91, blue:0.86, alpha:1.0)])
-                    
+            ([NSFontAttributeName: UIFont(name: "PingFang TC", size: 22)!,
+                NSForegroundColorAttributeName: UIColor(red:0.79, green:0.82, blue:0.80, alpha:1.0)])
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.12, green: 0.12, blue: 0.14, alpha: 1.0)
+        
         self.navigationItem.title = "World Of Music"
-
+        
         // Do any additional setup after loading the view, typically from a nib.
         centerMapOnLocation(initialLocation)
     }
-
+    
     
     /*override func viewWillAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewDidAppear(animated)
-    }*/
+     self.navigationController?.setNavigationBarHidden(true, animated: animated)
+     super.viewDidAppear(animated)
+     }*/
     
     let regionRadius: CLLocationDistance = 7000000
     func centerMapOnLocation(location: CLLocation) {
@@ -57,7 +58,7 @@ class ViewController: UIViewController {
         let location = sender.locationInView(self.mapView)
         
         let locationCoord = self.mapView.convertPoint(location, toCoordinateFromView: self.mapView)
-
+        
         let annotation = MKPointAnnotation()
         annotation.coordinate = locationCoord
         
@@ -71,14 +72,14 @@ class ViewController: UIViewController {
         geoCoder.reverseGeocodeLocation(loc){
             (placemarks, error) -> Void in
             let placeArray = placemarks as [CLPlacemark]!
-
+            
             var placeMark: CLPlacemark!
             placeMark = placeArray?[0]
             
             if let country = placeMark.addressDictionary?["Country"] as? NSString
             {
-            //this prints the list of album titles that correpsond to the location clicked on
-             self.countryWithPlus = "\(country)".stringByReplacingOccurrencesOfString(" ", withString: "+")
+                //this prints the list of album titles that correpsond to the location clicked on
+                self.countryWithPlus = "\(country)".stringByReplacingOccurrencesOfString(" ", withString: "+")
             }
         }
     }
